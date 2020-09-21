@@ -7,9 +7,11 @@ class PortfolioContainer extends Component {
     return (
       <div>
         <h2>My Portfolio</h2>
-          {
-            //render your portfolio stocks here
-          }
+        {
+          this.props.addToMy.map(ele=>
+            <Stock ele={ele} key={ele.id} selsectClick={(e)=>this.props.removeStock(e)}/>
+          )
+        }
       </div>
     );
   }
